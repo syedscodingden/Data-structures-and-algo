@@ -1,7 +1,17 @@
+// For the problem description refer to GFG
+// Link: https://www.geeksforgeeks.org/problems/binary-tree-representation/1
+
+// Problem Description
+// You are given an array nodes. It contains 7 integers, which represents the value of nodes of the binary tree in level order traversal. 
+// You are also given a root of the tree which has a value equal to nodes[0].
+// Your task to construct a binary tree by creating nodes for the remaining 6 nodes.
+
+// The output is then given as the preOrder of the created Tree
+// The important function is createTree(root, list[levelOrderTraversal]) which takes the root and the list of elements given as the level order traversal of the desired tree
+// The output is verified by the preOrder function which prints the preOrder of the formed tree
+
 import java.io.IOException;
 import java.util.*;
-
-import javax.lang.model.type.NullType;
 
 class Node {
     int val;

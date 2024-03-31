@@ -62,17 +62,24 @@ public class InOrder {
     }
 
     public static void main(String args[]) throws IOException {
-        ArrayList<Integer> input = new ArrayList<>();
+        Integer[] nodeValuesLevelWise = { 1, 2, 3, 4, 5, 6, 7 };
 
-        Scanner scn = new Scanner(System.in);
-        System.out.println("Enter the number of nodes and then provide values for each level of the tree");
-        String sizeString = scn.next();
-        int size = Integer.parseInt(sizeString);
-        for (int i = 0; i < size; i++) {
-            System.out.println("Enter the value of node: " + i);
-            String nodeString = scn.next();
-            input.add(Integer.parseInt(nodeString));
-        }
+        ArrayList<Integer> input = new ArrayList<>(Arrays.asList(nodeValuesLevelWise));
+
+        // ** This code can be used to pass custom node values level wise
+        // ** Uncomment to use this for entering your own values
+
+        // Scanner scn = new Scanner(System.in);
+        // System.out.println("Enter the number of nodes and then provide values for
+        // each level of the tree");
+        // String sizeString = scn.next();
+        // int size = Integer.parseInt(sizeString);
+        // for (int i = 0; i < size; i++) {
+        // System.out.println("Enter the value of node: " + i);
+        // String nodeString = scn.next();
+        // input.add(Integer.parseInt(nodeString));
+        // }
+        // scn.close();
 
         Node root0 = new Node(input.get(0));
 
@@ -83,7 +90,5 @@ public class InOrder {
         for (Integer node : result) {
             System.out.print(node + " ");
         }
-
-        scn.close();
     }
 }

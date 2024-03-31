@@ -1,3 +1,13 @@
+// For the problem description refer to GFG
+// Link: https://www.geeksforgeeks.org/problems/preorder-traversal/1
+
+// Problem Description
+// Given a binary tree, find its preorder traversal.
+
+// The output is the preOrder of the created tree
+// The important functions are preOrder(root) and preOrderHelper(root, bag), the former takes the root of the created tree and uses the latter to get the preoder of the created tree
+// preOrderHelper takes the root and an ArrayList bag to store the output of the preorder which is later printed using for each loop
+
 import java.io.IOException;
 import java.util.*;
 
@@ -11,21 +21,20 @@ class Node {
         left = null;
         right = null;
     }
-
 }
 
 public class PreOrder {
-    static void preOrder(Node root, ArrayList<Integer> bag) {
+    static void preOrderHelper(Node root, ArrayList<Integer> bag) {
         if (root != null) {
             bag.add(root.val);
-            preOrder(root.left, bag);
-            preOrder(root.right, bag);
+            preOrderHelper(root.left, bag);
+            preOrderHelper(root.right, bag);
         }
     }
 
     static ArrayList<Integer> preOrder(Node root) {
         ArrayList<Integer> bag = new ArrayList<>();
-        preOrder(root, bag);
+        preOrderHelper(root, bag);
         return bag;
     }
 
